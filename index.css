@@ -79,3 +79,102 @@
 .footer p {
     margin: 5px 0;
 }
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+h1{
+    color: rgb(247, 242, 242);
+    padding: 0px 10px 0px 25px;
+}
+
+li{
+    color: rgb(250, 248, 248);
+    font-style: inherit;
+    font-size: 20px;
+    list-style-type: none;
+    display: inline-flex;
+    margin-right: 30px;
+    gap: 10px;
+    text-shadow: 2px 2px 4px rgb(241, 9, 47);
+
+}
+.form-container{
+    max-width: 500px;
+    margin: 20px auto;
+    padding:20px;
+    border:1px solid rgb(48, 46, 46);
+    border-radius: 20px;
+    background-color: #fff0c8;
+}
+h2{
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    margin-bottom: 10px;
+}
+P{
+   text-align: center; 
+   font-size: 18px;
+   margin-bottom: 15px;
+}
+label{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: rgb(0, 0, 0);
+}
+input[type="text"],
+input[type="tel"] {
+     width: 100%;
+     padding: 5px;
+     margin-bottom: 15px;
+     border: 1px solid rgb(231, 212, 192);
+     border-radius:5px ;
+     box-sizing: border-box;
+}
+button{
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+.submit-btn{
+   background-color: rgb(7, 6, 6);
+   color: white;
+   font-size: 15px;
+}
+  .submit-btn:hover {
+    background-color: #f7f4f4;
+    color: #333;
+    transition: 0.3s;
+  }
+.cancelbtn{
+    background-color: rgb(228, 224, 224);
+    color: rgb(7, 7, 7);
+    font-size: 15px;
+}
+.cancelbtn:hover{
+    background-color: red;
+    color: white;
+    font-size: 15px;
+    transition: 0.3s;
+
+}
+.W1{
+    width: 500px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid rgb(228, 15, 15);
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgb(218, 28, 28, 1.3);
+}
