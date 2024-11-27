@@ -1,5 +1,5 @@
-document.getElementById('ordernow').addEventListener('click',function(){
-    const from = document.getElementById('orderform');
+document.getElementById('orderNow').addEventListener('click',function(){
+    const from = document.getElementById('orderForm');
     from.style.display = 'block'
     document.body.classList.add('modal-open');
 });
@@ -17,3 +17,20 @@ document.getElementById('quantity').addEventListener('input', function () {
     const quantity = parseInt(this.value) || 1; // Default to 1 if empty
     document.getElementById('total').value = (unitPrice * quantity).toFixed(2);
 });
+
+document.getElementById('Postcode').addEventListener('input', function() {
+    const postcode = this.value;
+    if(isNaN(postcode) || postcode.length > 5){
+        alert('You must enter only up to 5 numeric digits!')
+        this.value = postcode.slice(0, 5);
+    }
+})
+
+
+document.getElementById('phone').addEventListener('input',function(){
+    const phone = this.value;
+    if(isNaN(phone) || phone.length > 10){
+        alert('You must enter only 10 numbers');
+        this.value = phone.slice(0, 10);
+    }
+})
