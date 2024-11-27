@@ -4,10 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VendoraWebSite</title>
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reem+Kufi:wght@400..700&display=swap"rel="stylesheet">
 </head>
 <body>
-    <nav></nav>
+    <nav>
+      <h1>Vendora</h1>
+      <ul>
+        <li>contact</li>
+        <li>acuille</li>
+        <li>produit</li>
+      </ul>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <section id="orderForm" class="form-container">
+        <form>
+            <h2>Order Form</h2>
+            <p>Please fill out the details below to complete your order.</p>
+            <label for="fullname">full name</label>
+           <input type="text" id="fullname"name="fullname"placeholder="Enter your name" class="W1"required>
+
+            <label for="Adress">Adress</label>
+           <input type="text" id="Adress"name="Adress"placeholder="Enter your Adress"class="W1" required>
+
+            <label for="Postcode"> Post code</label>
+           <input type="text" id=" Postcode"name="postcode"placeholder="Enter your postcode"class="W1" required>
+
+            <label for="phone">phone number</label>
+           <input type="tel" id="phone"name="phone"placeholder="Enter your phone number" class="W1"required>
+
+            <label for="quantity">desired quantity</label>
+           <input type="text" id="quantity"name="quantity"placeholder="Enter the desired quantity" class="W1"required>
+
+            <label for="total">total of order (MAD)</label>
+           <input type="text" id="total"name="total" value="0"class="W1" readonly>
+
+           <button type="submit" class="submit-btn">submit order</button>
+           <button id="closeform"class="cancelbtn">cancel </button> 
+        </form>
+    </section>   
+    
 
     
 
