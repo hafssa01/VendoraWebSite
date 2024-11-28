@@ -1,13 +1,17 @@
 *{
     font-family: Poppins;
+    padding: 0px;
+    margin: 0px;
+    
 }
 
 .product-container{
-    display: inline-flex;
+    display: none;
     justify-content: center;
     align-items: center;
     gap: 180px;
-    margin: 20px;
+    padding: 20px;
+    overflow: hidden;
     background-color: rgb(254, 244, 231);
 
 }
@@ -24,7 +28,7 @@
     
 }
 /* Price */
-.product-description h3{
+.new-price{
     font-size: 30px;
     color: rgb(164, 0, 0);
     display: flex;
@@ -36,15 +40,16 @@
     font-size: 20px;
     text-align: left;
 }
+/* Description and Features text */
 .product-description h4{
-    font-size: 20px;
+    font-size: 24px;
     text-align: left;
 }
 .product-description {
     padding: 0px 90px 0px 0px;
 }
-/* Privious price */
-.product-description del{
+/* Old price */
+del{
     font-size: 20px;
     color: rgb(116, 116, 116);
     display: flex;
@@ -60,18 +65,24 @@
 
 
 .product-image img{
-    width: 570px ;
+    width: 100% ;
     height: auto ;
-    margin: 16px 0px 0px 60px;
-    border-radius: 30px;
-   
     
+    border-radius: 30px;
 }
+
 .order-button{
     margin: 10px;
     padding: 10px 100px;
-    font-size: 17px;
+    font-size: 20px;
+    font-weight: bold;
     border-radius: 20px;
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    background-color: black;
+    color: white;
 }
 
 /* hover effects for interactivity */
@@ -87,7 +98,6 @@
     color: #e9e9e9;
     text-align: center;
     padding: 10px 0;
-    margin: 20px 0px 5px 0px;
     font-size: 16px;
     border-top: 1px solid #ddd;
 }
@@ -103,48 +113,84 @@ nav{
     align-items: center;
     background-color: #333;
     padding: 8px;
-    margin-left: -20px;
-    margin-right: -20px;
+    
 }
-
-h1{
+/* logo's name */
+/* h1{
     color: rgb(247, 242, 242);
     padding: 0px 10px 0px 25px;
     font-size: 25px;
+} */
+
+
+.navbar-logo {
+    font-size: 31px;
+    font-weight: bold;
+    color: rgb(254, 244, 231);
+    animation: blink 1.8s infinite;
+    padding: 0px 10px 0px 25px;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px rgb(235, 148, 8, 1.5);
+    font-family: Orbitron;
+}
+
+/* Blinking or Opacity Degradation Effect */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .list li{
-    color: rgb(250, 248, 248);
+    color: rgb(254, 244, 231);
     font-style: inherit;
-    font-size: 23px;
+    font-size: 25px;
     list-style-type: none;
     display: inline-flex;
     margin-right: 30px;
     gap: 15px;
     text-shadow: 2px 2px 4px rgb(235, 148, 8, 1.5);
-
+    
 }
 .form-container{
     display:none;
-    max-width: 500px;
+    max-width: 700px;
     margin: 20px auto;
-    padding:20px;
+    padding:50px 85px 0px 85px;
     border:1px solid rgb(48, 46, 46);
     border-radius: 20px;
     background-color: rgb(254, 244, 231);
 }
+.form-container label{
+    font-size: 19px;
+}
+/* Place holder */
+::placeholder{
+    font-size: 20px;
+}
+/* Input field */
+#fullname{
+    font-size: 20px;
+}
+
 
 
 h2{
     text-align: center;
-    font-size: 30px;
+    font-size: 37px;
     color: black;
     margin-bottom: 10px;
 }
 P{
    text-align: center; 
    font-size: 18px;
-   margin-bottom: 15px;
+   margin-bottom: 18px;
 }
 label{
     display: block;
@@ -152,50 +198,133 @@ label{
     margin-bottom: 5px;
     color: rgb(0, 0, 0);
 }
-input[type="text"],
+/* input[type="text"],
 input[type="tel"] {
      width: 100%;
-     padding: 5px;
+     padding: 20px;
      margin-bottom: 15px;
      border: 1px solid rgb(231, 212, 192);
      border-radius:5px ;
      box-sizing: border-box;
-}
-button{
-    width: 100%;
-    padding: 10px;
-    font-size: 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 15px;
-}
+
+} */
+
 .submit-btn{
    background-color: rgb(7, 6, 6);
    color: white;
-   font-size: 15px;
+   padding: 10px 40px;
+   margin: 10px 30px 22px 50px;
+   font-size: 20px;
+   border-radius: 20px;
+   font-weight: bold;
 }
-  .submit-btn:hover {
+.submit-btn:hover {
     background-color: #f7f4f4;
     color: #333;
     transition: 0.3s;
-  }
+}
 .cancelbtn{
     background-color: rgb(228, 224, 224);
     color: rgb(7, 7, 7);
     font-size: 15px;
+    margin: 10px 20px;
+    padding: 10px 40px;
+    font-size: 20px;
+    border-radius: 20px;
+    font-weight: bold;
 }
 .cancelbtn:hover{
     background-color: red;
     color: white;
-    font-size: 15px;
     transition: 0.3s;
 
 }
 .W1{
-    width: 500px;
+    /* width: 500px;
     padding: 10px;
-    margin: 10px 0;
-    border: 1px solid rgb(228, 15, 15);
-    border-radius: 5px;
+    margin: 10px 0; */
+    /* border: 1px solid rgb(228, 15, 15); */
+    border-radius: 20px;
     box-shadow: 0 5px 10px rgb(235, 148, 8, 1.3);
+    width: 90%;
+     padding: 20px;
+     margin-bottom: 15px;
+     border: 1px solid rgb(231, 212, 192);
+     font-size: 20px;
+     /* box-sizing: border-box; */
+     
+}
+
+/* Hero Section */
+.hero {
+    /* position: relative; */
+    width: 100%;
+    height: 100vh; /* Full height  */
+    overflow: hidden;
+}
+
+/* Hero Heading */
+.hero-overlay h1 {
+    font-size: 85px;
+    font-weight: bold;
+    text-shadow: 0px 5px 10px rgba(255, 178, 44, 2);
+    margin-bottom: 20px;
+}
+
+/* Hero Description */
+.hero-overlay p {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+/* Video background */
+.hero-video-container video{
+    /* position: absolute; */
+    /* top: 0;
+    left: 0; */
+    width: 100%;
+    height: 100vh;
+    /* z-index: -1; Keeps the video behind the content */
+    object-fit: cover;
+}
+/* Hero text */
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1;
+    padding-bottom: 20px;
+}
+
+/* CTA learn more button */
+.cta-button {
+    padding: 17px 60px 17px 60px;
+    background-color: #ffad50; 
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.cta-button:hover {
+    background-color: #ffddb3;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+    .product-container {
+        flex-direction: column; 
+        gap: 20px;
+    }
+    .product-description {
+        padding: 0px 30px;
+    }
 }
