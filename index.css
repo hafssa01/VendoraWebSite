@@ -48,6 +48,7 @@ nav{
     margin-right: 30px;
     gap: 15px;
     text-shadow: 2px 2px 4px rgb(235, 148, 8, 1.5);
+    cursor: pointer;
     
 }
 /* ---------------------------------------------------------------- */
