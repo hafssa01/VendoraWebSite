@@ -1,14 +1,4 @@
-document.getElementById('orderNow').addEventListener('click',function(){
-    const form = document.getElementById('orderForm');
-    form.style.display = 'block'
-    document.body.classList.add('modal-open');
-    window.scrollTo({
-        top: form.offsetTop,
-        behavior: 'smooth'
-    });
-});
-
-// Reveal the product section when "Learn More" is clicked
+// Reveal the product section when "Learn More" is clicked in ---"Hero Section"---
 document.getElementById('showProduct').addEventListener('click', function () {
     const productSection = document.getElementById('productSection');
     productSection.style.display = 'flex';
@@ -18,44 +8,29 @@ document.getElementById('showProduct').addEventListener('click', function () {
     });
 });
 
-// Close the form when the "Cancel" button is clicked
-document.getElementById('closeForm').addEventListener('click', function () {
+//---------------------------------------------------------------------------
+
+//Product Section Order Now Button --------------------------------------
+document.getElementById('orderNow').addEventListener('click',function(){
     const form = document.getElementById('orderForm');
-    form.style.display = 'none';
-    document.body.classList.remove('modal-open');
+    form.style.display = 'block'
+    document.body.classList.add('modal-open');
     window.scrollTo({
         top: form.offsetTop,
         behavior: 'smooth'
     });
 });
+//------------------------------------------------------------------------
 
-// Update total dynamically based on quantity
-document.getElementById('quantity').addEventListener('input', function () {
-    const unitPrice = 1171.25; // Price per unit
-    const quantity = parseInt(this.value) || 1; // Default to 1 if empty
-    if(!isNaN(quantity)){
-
-    
-        document.getElementById('total').value = (unitPrice * quantity).toFixed(2);
-    }
+// Order Form section -----------------------------------------------------------
+// Phone number field
+document.getElementById('phone').addEventListener('input', function () {
+    setTimeout(() => {
+        let phone = this.value.replace(/[a-zA-Z]/g, ''); // Remove alphabets
+        phone = phone.slice(0, 10); // Restrict to 10 digits
+        this.value = phone; // Update the value
+    }, 0);
 });
-
-document.getElementById('Postcode').addEventListener('input', function() {
-    const postcode = this.value;
-    if(isNaN(postcode) || postcode.length > 5){
-        alert('You must enter only up to 5 numeric digits!')
-        this.value = postcode.slice(0, 5);
-    }
-})
-// Pone number field
-document.getElementById('phone').addEventListener('input',function(){
-    const phone = this.value
-    if(phone.length > 10){
-        alert('You must enter only 10 numbers');
-        this.value = phone.slice(0, 10);
-    }
-    this.value = phone;
-})
 
 // fullname validation
 const fullnameField = document.getElementById('fullname');
@@ -82,3 +57,87 @@ fullnameField.addEventListener('input', function () {
         errorMessage.style.display = 'none'; // Hide error message when input is valid
     }
 });
+// Post code
+document.getElementById('postcode').addEventListener('input', function () {
+    setTimeout(() => {
+        let postcode = this.value.replace(/[a-zA-Z]/g, ''); // Remove alphabets
+        postcode = postcode.slice(0, 5); // Restrict to 5 digits
+        this.value = postcode; // Update the value
+    }, 0);
+});
+
+// Update total dynamically based on quantity in ---"Order Form"---
+document.getElementById('quantity').addEventListener('input', function () {
+    const unitPrice = 1171.25; // Price per unit
+    let quantityInput = document.getElementById('quantity').value
+    
+    quantityInput = quantityInput.replace(/[^0-9]/g, '')
+    document.getElementById('quantity').value = quantityInput;
+
+    if(!quantityInput){
+        document.getElementById('total').value = '0.00'
+
+    }else{
+        
+        document.getElementById('total').value = (unitPrice * quantityInput).toFixed(2); 
+        
+    }
+
+
+});
+
+//-----------------------------------------------------------------------
+
+//Form Buttons---------------------------------------------------------
+// Close the form when the "Cancel" button is clicked
+document.getElementById('closeForm').addEventListener('click', function () {
+    const form = document.getElementById('orderForm');
+    form.style.display = 'none';
+    document.body.classList.remove('modal-open');
+    window.scrollTo({
+        top: form.offsetTop,
+        behavior: 'smooth'
+    });
+});
+
+//Submission
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // document.querySelector('form').reset();
+    document.getElementById('total').value = '0';
+    
+
+    const fullname = document.getElementById('fullname').value.trim();
+    const address = document.getElementById('Adress').value.trim();
+    const postcode = document.getElementById('postcode').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const quantity = document.getElementById('quantity').value.trim();
+    const submitError = document.getElementById('submit-error')
+    const submitReceived = document.getElementById('submit-received')
+
+    
+      // Check that all fields are filled out
+      if (!fullname || !address || !postcode || !phone || !quantity) {
+        submitError.style.display = 'block'
+        submitReceived.style.display = 'none'
+    }else{
+        submitReceived.style.display = 'block'
+        submitError.style.display = 'none'
+        document.querySelector('form').reset();
+    }
+});
+//----------------------------------------------------------------------
+
+
+
+//----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+

@@ -60,44 +60,36 @@
     </div>
 </section>
 
-
+    <!-- Order Form section -->
     <section id="orderForm" class="form-container">
         <form>
             <h2>Order Form</h2>
             <p>Please fill out the details below to complete your order.</p>
-            <label for="fullname">full name</label>
-           <input type="text" id="fullname"name="fullname"placeholder="Enter your name" class="W1"required>
+            <label for="fullname">Full name</label>
+           <input type="text" id="fullname"name="fullname"placeholder="Enter your name" class="W1">
            <p id="error-message" style="color: red; display: none;">Only letters and spaces are allowed.</p>
 
             <label for="Adress">Adress</label>
-           <input type="text" id="Adress"name="Adress"placeholder="Enter your Adress"class="W1" required>
+           <input type="text" id="Adress"name="Adress"placeholder="Enter your Adress"class="W1" >
 
             <label for="Postcode">Post code</label>
-           <input type="text" id="postcode"name="postcode"placeholder="Enter your postcode"class="W1" required>
+           <input type="text" id="postcode"name="postcode"placeholder="Enter your postcode"class="W1" >
 
-            <label for="phone">phone number</label>
-           <input type="tel" id="phone"name="phone"placeholder="Enter your phone number" class="W1"required>
+            <label for="phone">Phone number</label>
+           <input type="tel" id="phone"name="phone"placeholder="Enter your phone number" class="W1">
 
-            <label for="quantity">desired quantity</label>
-           <input type="text" id="quantity"name="quantity"placeholder="Enter the desired quantity" class="W1"required>
+            <label for="quantity">Desired quantity</label>
+           <input type="text" id="quantity"name="quantity" placeholder="Enter the desired quantity" class="W1">
 
-            <label for="total">total of order (MAD)</label>
-           <input type="text" id="total"name="total" value="0"class="W1" readonly>
+            <label for="total">Total of order (MAD)</label>
+           <input type="text" id="total"name="total" value="0.00"class="W1" readonly>
 
            <button type="submit" class="submit-btn">submit order</button>
            <button id="closeForm"class="cancelbtn">cancel </button> 
+           <p id="submit-error" style="color: red; display: none; font-weight: bold">Please fill in all fields.</p>
+           <p id="submit-received" style="color: rgba(0, 167, 47, 0.898); display: none; font-weight: bold;">Your order has been received. We will contact you soon.</p>
         </form>
     </section>   
-    
-    <!-- Hero section -->
-    <!-- <section class="hero" id="home">
-        <h1>Welcome to Vendora</h1>
-        <p>Discover the latest in smart home technology with the Smart Voice Control Panel.</p>
-        <button class="cta-button">Learn More</button>
-    </section> -->
-    
-    
-    
 
     <!-- Footer -->
     <footer class="footer">
@@ -108,9 +100,6 @@
             <p>Email: support@vendora.com | Phone: +212-555-555-555</p>
         </div>
     </footer>
-
-
-
 
 <script src="./index.js"></script>   
 </body>
