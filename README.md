@@ -1,1 +1,1 @@
-Création d'une Page Web pour la Vente d'un Produit dela société Vendora
+Creation of a Web Page for the Sale of a Vendora Product
