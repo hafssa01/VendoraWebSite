@@ -19,7 +19,7 @@ nav{
     font-size: 31px;
     font-weight: bold;
     color: rgb(254, 244, 231);
-    animation: blink 1.8s infinite;
+    animation: gradientBlink 3s infinite;
     padding: 0px 10px 0px 25px;
     cursor: pointer;
     text-shadow: 2px 2px 4px rgb(235, 148, 8, 1.5);
@@ -27,15 +27,18 @@ nav{
 }
 
 /* Blinking or Opacity Degradation Effect */
-@keyframes blink {
+@keyframes gradientBlink {
     0% {
-        opacity: 1;
+        color: rgb(254, 244, 231); /* Light cream */
+        text-shadow: 2px 2px 4px rgba(235, 148, 8, 1.5);
     }
     50% {
-        opacity: 0.5;
+        color: orange; /* Bright orange */
+        text-shadow: 2px 2px 6px rgba(255, 100, 0, 1);
     }
     100% {
-        opacity: 1;
+        color: rgb(254, 244, 231); /* Light cream */
+        text-shadow: 2px 2px 4px rgba(235, 148, 8, 1.5);
     }
 }
 
