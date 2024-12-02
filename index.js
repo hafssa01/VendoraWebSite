@@ -13,8 +13,7 @@ document.getElementById('showProduct').addEventListener('click', function () {
 //Product Section Order Now Button --------------------------------------
 document.getElementById('orderNow').addEventListener('click',function(){
     const form = document.getElementById('orderForm');
-    form.style.display = 'block'
-    document.body.classList.add('modal-open');
+    form.style.display = 'flex'
     window.scrollTo({
         top: form.offsetTop,
         behavior: 'smooth'
@@ -60,7 +59,7 @@ fullnameField.addEventListener('input', function () {
 // Post code
 document.getElementById('postcode').addEventListener('input', function () {
     setTimeout(() => {
-        let postcode = this.value.replace(/[a-zA-Z]/g, ''); // Remove alphabets
+        let postcode = this.value.replace(/[^0-9]/g, '');
         postcode = postcode.slice(0, 5); // Restrict to 5 digits
         this.value = postcode; // Update the value
     }, 0);
@@ -93,7 +92,6 @@ document.getElementById('quantity').addEventListener('input', function () {
 document.getElementById('closeForm').addEventListener('click', function () {
     const form = document.getElementById('orderForm');
     form.style.display = 'none';
-    document.body.classList.remove('modal-open');
     window.scrollTo({
         top: form.offsetTop,
         behavior: 'smooth'
@@ -103,9 +101,6 @@ document.getElementById('closeForm').addEventListener('click', function () {
 //Submission
 document.querySelector('form').addEventListener('submit', function(event) {
     event.preventDefault();
-    // document.querySelector('form').reset();
-    document.getElementById('total').value = '0';
-    
 
     const fullname = document.getElementById('fullname').value.trim();
     const address = document.getElementById('Adress').value.trim();
@@ -127,14 +122,3 @@ document.querySelector('form').addEventListener('submit', function(event) {
     }
 });
 //----------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-

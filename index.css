@@ -44,9 +44,7 @@ nav{
 
 .list li{
     color: rgb(254, 244, 231);
-    font-style: inherit;
     font-size: 25px;
-    list-style-type: none;
     display: inline-flex;
     margin-right: 30px;
     gap: 15px;
