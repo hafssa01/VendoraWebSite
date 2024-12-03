@@ -25,9 +25,9 @@ document.getElementById('orderNow').addEventListener('click',function(){
 // Phone number field
 document.getElementById('phone').addEventListener('input', function () {
     setTimeout(() => {
-        let phone = this.value.replace(/[a-zA-Z]/g, ''); // Remove alphabets
-        phone = phone.slice(0, 10); // Restrict to 10 digits
-        this.value = phone; // Update the value
+        let phone = this.value.replace(/[a-zA-Z]/g, '');
+        phone = phone.slice(0, 10);
+        this.value = phone;
     }, 0);
 });
 
@@ -39,35 +39,33 @@ fullnameField.addEventListener('input', function () {
     let input = fullnameField.value;
     let validInput = '';
 
-    // Loop through each character in the input
     for (let i = 0; i < input.length; i++) {
         let char = input[i];
 
-        // Allow only letters (uppercase, lowercase) and spaces
         if ((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z') || char === ' ') {
-            validInput += char; // Add valid characters to validInput
+            validInput += char;
         } else {
-            errorMessage.style.display = 'block'; // Show error message for invalid characters
+            errorMessage.style.display = 'block';
         }
     }
 
-    fullnameField.value = validInput; // Update the input field with valid characters
+    fullnameField.value = validInput;
     if (errorMessage.style.display === 'block' && validInput === input) {
-        errorMessage.style.display = 'none'; // Hide error message when input is valid
+        errorMessage.style.display = 'none';
     }
 });
 // Post code
 document.getElementById('postcode').addEventListener('input', function () {
     setTimeout(() => {
         let postcode = this.value.replace(/[^0-9]/g, '');
-        postcode = postcode.slice(0, 5); // Restrict to 5 digits
-        this.value = postcode; // Update the value
+        postcode = postcode.slice(0, 5);
+        this.value = postcode;
     }, 0);
 });
 
 // Update total dynamically based on quantity in ---"Order Form"---
 document.getElementById('quantity').addEventListener('input', function () {
-    const unitPrice = 1171.25; // Price per unit
+    const unitPrice = 1171.25;
     let quantityInput = document.getElementById('quantity').value
     
     quantityInput = quantityInput.replace(/[^0-9]/g, '')
@@ -111,7 +109,6 @@ document.querySelector('form').addEventListener('submit', function(event) {
     const submitReceived = document.getElementById('submit-received')
 
     
-      // Check that all fields are filled out
       if (!fullname || !address || !postcode || !phone || !quantity) {
         submitError.style.display = 'block'
         submitReceived.style.display = 'none'

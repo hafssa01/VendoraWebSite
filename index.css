@@ -56,7 +56,6 @@ nav{
 
 /* Hero Section --------------------------------------------------- */
 .hero {
-    /* position: relative; */
     width: 100%;
     height: 100vh; /* Full height  */
     overflow: hidden;
@@ -78,12 +77,8 @@ nav{
 
 /* Video background */
 .hero-video-container video{
-    /* position: absolute; */
-    /* top: 0;
-    left: 0; */
     width: 100%;
     height: 100vh;
-    /* z-index: -1; Keeps the video behind the content */
     object-fit: cover;
 }
 /* Hero text */
