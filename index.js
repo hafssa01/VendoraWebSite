@@ -99,23 +99,52 @@ document.getElementById('closeForm').addEventListener('click', function () {
 //Submission
 document.querySelector('form').addEventListener('submit', function(event) {
     event.preventDefault();
-
     const fullname = document.getElementById('fullname').value.trim();
-    const address = document.getElementById('Adress').value.trim();
+    const address = document.getElementById('address').value.trim();
     const postcode = document.getElementById('postcode').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const quantity = document.getElementById('quantity').value.trim();
     const submitError = document.getElementById('submit-error')
     const submitReceived = document.getElementById('submit-received')
 
-    
       if (!fullname || !address || !postcode || !phone || !quantity) {
+        event.preventDefault();
         submitError.style.display = 'block'
         submitReceived.style.display = 'none'
     }else{
         submitReceived.style.display = 'block'
         submitError.style.display = 'none'
-        document.querySelector('form').reset();
+        
+         // Prepare data to send in the fetch request
+         const formData = new FormData();
+         formData.append('fullname', fullname);
+         formData.append('address', address);
+         formData.append('postcode', postcode);
+         formData.append('phone', phone);
+         formData.append('quantity', quantity);
+         formData.append('total', total);
+
+        // Form submission
+        fetch("/", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                // On success, redirect to the custom Thank You page
+                window.location.href = 'thank-you.html';
+                // On success, reset the form
+                document.querySelector('form').reset();
+            } else {
+                throw new Error("Form submission failed");
+                
+            }
+        })
+        .catch(error => {
+            console.error("Error submitting the form:", error);
+            submitError.style.display = 'block';    // Show error message
+            submitReceived.style.display = 'none';
+        });
     }
 });
 //----------------------------------------------------------------------

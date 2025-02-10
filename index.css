@@ -11,8 +11,20 @@ nav{
     justify-content: space-between;
     align-items: center;
     background-color: #333;
-    padding: 8px;
+    padding: 0px 30px 0px 30px;
+    height: 100px;
     
+}
+
+.nav-logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo img{
+    width: 90px;
+    height: 90px;
 }
 
 .navbar-logo {
@@ -20,7 +32,6 @@ nav{
     font-weight: bold;
     color: rgb(254, 244, 231);
     animation: gradientBlink 3s infinite;
-    padding: 0px 10px 0px 25px;
     cursor: pointer;
     text-shadow: 2px 2px 4px rgb(235, 148, 8, 1.5);
     font-family: Orbitron;
@@ -29,15 +40,15 @@ nav{
 /* Blinking or Opacity Degradation Effect */
 @keyframes gradientBlink {
     0% {
-        color: rgb(254, 244, 231); /* Light cream */
+        color: rgb(254, 244, 231); 
         text-shadow: 2px 2px 4px rgba(235, 148, 8, 1.5);
     }
     50% {
-        color: orange; /* Bright orange */
+        color: orange; 
         text-shadow: 2px 2px 6px rgba(255, 100, 0, 1);
     }
     100% {
-        color: rgb(254, 244, 231); /* Light cream */
+        color: rgb(254, 244, 231);
         text-shadow: 2px 2px 4px rgba(235, 148, 8, 1.5);
     }
 }
@@ -51,6 +62,9 @@ nav{
     text-shadow: 2px 2px 4px rgb(235, 148, 8, 1.5);
     cursor: pointer;
     
+}
+.list li:hover{
+    color: orange
 }
 /* ---------------------------------------------------------------- */
 
@@ -196,13 +210,18 @@ del{
 
 /* Form  ------------------------------------------------------------*/
 .form-container{
-    display:none;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 40px 0px 40px 0px;
+    
+}
+.form-container form{
     max-width: 700px;
-    margin: 20px auto;
-    padding:50px 85px 0px 85px;
     border:3px solid rgb(48, 46, 46);
     border-radius: 20px;
     background-color: rgb(254, 244, 231);
+    padding: 20px 20px 0px 40px;
 }
 .form-container label{
     font-size: 19px;
@@ -267,7 +286,7 @@ label{
 .W1{
     border-radius: 20px;
     box-shadow: 0 5px 10px rgb(235, 148, 8, 1.3);
-    width: 90%;
+    width:90%;
      padding: 20px;
      margin-bottom: 15px;
      border: 1px solid rgb(231, 212, 192);

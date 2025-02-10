@@ -13,11 +13,14 @@
 <body>
     <!-- naviguation bar -->
     <nav>
-      <h1 class="navbar-logo">Vendora</h1>
+        <div class="nav-logo">
+            <img src="Media/Vendora_logo.png" alt="">
+            <h1 class="navbar-logo">Vendora</h1>
+        </div>
       <ul class="list">
-        <li>home</li>
-        <li>contact</li>
-        <li>product</li>
+        <li>Home</li>
+        <li>Contact</li>
+        <li>Product</li>
       </ul>
     </nav>
     <!-- Hero section with Video Background -->
@@ -61,16 +64,16 @@
 </section>
 
     <!-- Order Form section -->
-    <section id="orderForm" class="form-container">
-        <form>
+    <section id="orderForm" class="form-container" style="display: none;">
+        <form name="order-form" method="POST" data-netlify="true" id="orderForm">
             <h2>Order Form</h2>
             <p>Please fill out the details below to complete your order.</p>
             <label for="fullname">Full name</label>
            <input type="text" id="fullname"name="fullname"placeholder="Enter your name" class="W1">
            <p id="error-message" style="color: red; display: none;">Only letters and spaces are allowed.</p>
 
-            <label for="Adress">Adress</label>
-           <input type="text" id="Adress"name="Adress"placeholder="Enter your Adress"class="W1" >
+            <label for="Adress">Address</label>
+           <input type="text" id="address"name="adress"placeholder="Enter your Adress"class="W1" >
 
             <label for="Postcode">Post code</label>
            <input type="text" id="postcode"name="postcode"placeholder="Enter your postcode"class="W1" >
@@ -89,6 +92,14 @@
            <p id="submit-error" style="color: red; display: none; font-weight: bold">Please fill in all fields.</p>
            <p id="submit-received" style="color: rgba(0, 167, 47, 0.898); display: none; font-weight: bold;">Your order has been received. We will contact you soon.</p>
         </form>
+        <!-- <form action="https://formspree.io/f/xyzkplqd" method="POST">
+            <input type="text" name="fullname" placeholder="Enter your name" required>
+            <input type="text" name="address" placeholder="Enter your address" required>
+            <input type="text" name="postcode" placeholder="Enter your postcode" required>
+            <input type="tel" name="phone" placeholder="Enter your phone number" required>
+            <input type="text" name="quantity" placeholder="Enter the desired quantity" required>
+            <button type="submit">Submit</button>
+        </form> -->
     </section>   
 
     <!-- Footer -->
