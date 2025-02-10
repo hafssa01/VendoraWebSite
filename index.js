@@ -132,7 +132,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
         .then(response => {
             if (response.ok) {
                 // On success, redirect to the custom Thank You page
-                window.location.href = 'thank-you.html';
+                window.location.href = './thank-you.html';
                 // On success, reset the form
                 document.querySelector('form').reset();
             } else {
@@ -142,8 +142,6 @@ document.querySelector('form').addEventListener('submit', function(event) {
         })
         .catch(error => {
             console.error("Error submitting the form:", error);
-            submitError.style.display = 'block';    // Show error message
-            submitReceived.style.display = 'none';
         });
     }
 });
