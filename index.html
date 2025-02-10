@@ -18,10 +18,15 @@
             <img src="Media/Vendora_logo.png" alt="">
             <h1 class="navbar-logo">Vendora</h1>
         </div>
+        <div class="burger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
       <ul class="list">
-        <li>Home</li>
-        <li>Contact</li>
-        <li>Product</li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#productSection">Product</a></li>
       </ul>
     </nav>
     <!-- Hero section with Video Background -->
@@ -32,11 +37,11 @@
     <div class="hero-overlay"> 
         <h1>Welcome to Vendora</h1>
         <p>Discover the latest in smart home technology with the Smart Voice Control Panel.</p>
-        <button class="cta-button" id="showProduct">Learn More</button>
+        <button class="cta-button" id="showProduct"><a href="#productSection">Learn More</a></button>
     </div>
 </section>
 
-<section class="parent_container">
+<section class="parent_container" id="product">
 
     <!-- Product section -->
     <div class="product-container" id="productSection">
@@ -93,15 +98,20 @@
            <p id="submit-error" style="color: red; display: none; font-weight: bold">Please fill in all fields.</p>
            <p id="submit-received" style="color: rgba(0, 167, 47, 0.898); display: none; font-weight: bold;">Your order has been received. We will contact you soon.</p>
         </form>
-        <!-- <form action="https://formspree.io/f/xyzkplqd" method="POST">
-            <input type="text" name="fullname" placeholder="Enter your name" required>
-            <input type="text" name="address" placeholder="Enter your address" required>
-            <input type="text" name="postcode" placeholder="Enter your postcode" required>
-            <input type="tel" name="phone" placeholder="Enter your phone number" required>
-            <input type="text" name="quantity" placeholder="Enter the desired quantity" required>
-            <button type="submit">Submit</button>
-        </form> -->
     </section>   
+
+    <section class="contact-section" id="contact" >
+        
+            <h2>Contact Us</h2>
+            <p>Have questions or need assistance? Fill out the form below</p>
+
+            <form class="contact-form" action="https://formspree.io/f/mqaelrer" method="POST" id="contactForm">
+                <input type="text" placeholder="Your Name" name="fullname" required>
+                <input type="email" placeholder="Your Email" name="email" required>
+                <textarea placeholder="Your Message" name="message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">

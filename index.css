@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 *{
     font-family: Poppins;
     padding: 0px;
@@ -16,6 +19,24 @@ nav{
     
 }
 
+/* Burger Menu */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background: white;
+}
+/* ------------------------------------------------------- */
+a {
+    text-decoration: none;
+    color: inherit;
+}
 .nav-logo{
     display: flex;
     align-items: center;
@@ -81,6 +102,7 @@ nav{
     font-weight: bold;
     text-shadow: 0px 5px 10px rgba(255, 178, 44, 2);
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 /* Hero Description */
@@ -132,7 +154,8 @@ nav{
     align-content: center;
 }
 .product-container{
-    display: none;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 180px;
@@ -182,7 +205,7 @@ del{
 .product-image img{
     width: 100% ;
     height: auto ;
-    
+
     border-radius: 30px;
 }
 
@@ -295,6 +318,63 @@ label{
 }
 /* ------------------------------------------------------------- */
 
+/* Contact -----------------------------------------------------*/
+.contact-section {
+    width: 50%;
+    margin: 50px auto;
+    padding-right: 65px;
+    padding-left: 50px;
+    background: white;
+    box-shadow: 0 0 10px rgba(255, 180, 4, 0.8);
+    border-radius: 8px;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+h2 {
+    color: #333;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    height: 100px;
+}
+
+button {
+    background-color: #ffad50;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #b35f00;
+}
+/* ------------------------------------------------------------- */
 /* footer ------------------------------------------------------ */
 .footer {
     background-color: #333; /* 7e5f5a */
@@ -319,7 +399,56 @@ label{
         flex-direction: column; 
         gap: 20px;
     }
-    .product-description {
-        padding: 0px 30px;
+    
+    .hero-overlay h1  {
+        font-size: 60px;
+        font-weight: bold;
+        text-shadow: 0px 5px 10px rgba(255, 178, 44, 2);
+        margin-bottom: 20px;
+        margin-top: 160px;
     }
+    .hero-overlay p  {
+        font-size: 20px;
+    }
+    .hero-overlay button {
+        padding: 10px 20px;
+        font-size: 18px;
+
+    }
+    .burger{
+        display: flex;
+    }
+    .list{
+        z-index: 1000;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        background-color: #333;
+        margin: 10px 0;
+    }
+    .list.show{
+        display: flex;
+    }
+    .list li{
+        padding: 10px;
+    }
+
+}
+
+@media (max-width: 968px) {
+    .hero-overlay h1  {
+        font-size: 65px;
+    }
+    .hero-overlay p  {
+        font-size: 25px;
+    }
+    .hero-overlay button {
+        padding: 12px 25px;
+    }
+    
 }

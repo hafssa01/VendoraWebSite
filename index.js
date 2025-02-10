@@ -1,15 +1,3 @@
-// Reveal the product section when "Learn More" is clicked in ---"Hero Section"---
-document.getElementById('showProduct').addEventListener('click', function () {
-    const productSection = document.getElementById('productSection');
-    productSection.style.display = 'flex';
-    window.scrollTo({
-        top: productSection.offsetTop,
-        behavior: 'smooth'
-    });
-});
-
-//---------------------------------------------------------------------------
-
 //Product Section Order Now Button --------------------------------------
 document.getElementById('orderNow').addEventListener('click',function(){
     const form = document.getElementById('orderForm');
@@ -20,6 +8,10 @@ document.getElementById('orderNow').addEventListener('click',function(){
     });
 });
 //------------------------------------------------------------------------
+//Burger toggling -------------------------------------------------
+function toggleMenu() {
+    document.querySelector('.list').classList.toggle('show');
+}
 
 // Order Form section -----------------------------------------------------------
 // Phone number field
@@ -124,7 +116,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
          formData.append('quantity', quantity);
          formData.append('total', total);
 
-        // Form submission
+        // Order form submission
         fetch("https://formspree.io/f/xyzkplqd", {
             method: "POST",
             body: formData
@@ -146,3 +138,28 @@ document.querySelector('form').addEventListener('submit', function(event) {
     }
 });
 //----------------------------------------------------------------------
+
+//Contact form
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const formData = new FormData(this); // Create a FormData object from the form
+
+    // Send the form data using Fetch API
+    fetch('https://formspree.io/f/mqaelrer', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => {
+        if (response.ok) {
+            // Handle success (e.g., show a success message)
+            alert('Message sent successfully!');
+            this.reset(); // Reset the form
+        } else {
+            throw new Error('Form submission failed');
+        }
+    })
+    .catch(error => {
+        console.error('Error submitting the form:', error);
+    });
+});
