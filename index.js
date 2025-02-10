@@ -125,7 +125,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
          formData.append('total', total);
 
         // Form submission
-        fetch("/", {
+        fetch("https://formspree.io/f/xyzkplqd", {
             method: "POST",
             body: formData
         })
